@@ -1,0 +1,16 @@
+<h1>アップロードされた画像</h1>
+
+<%= link_to "新しい画像をアップロード", new_image_path, class: "btn btn-primary" %>
+
+<ul>
+  <% @images.each do |image| %>
+    <li>
+      <strong><%= image.title %></strong><br>
+      <% if image.file.attached? %>
+        <%= image_tag image.file %>
+      <% else %>
+        画像がありません。
+      <% end %>
+    </li>
+  <% end %>
+</ul>
