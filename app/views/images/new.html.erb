@@ -1,0 +1,17 @@
+<h1>画像をアップロード</h1>
+
+<%= form_with model: @image, local: true do |form| %>
+  <div>
+    <%= form.label :title, "画像タイトル" %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :file, "画像ファイル" %><br>
+    <%= form.file_field :file %>
+  </div>
+
+  <div>
+    <%= form.submit "アップロード" %>
+  </div>
+<% end %>
